@@ -1,0 +1,143 @@
+.prod_content {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  height: 25vh;
+  width: 78vw;
+  line-height: 3vh;
+  font-size: 0.7em;
+}
+
+.prod_content img {
+  width: 15vw;
+  height: 19vh;
+  margin-right: 30px;
+  transition: all 0.5s;
+  border: 1px solid grey;
+}
+
+.prod_content img:hover{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product__title{
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+}
+
+.product__title:hover{
+  text-decoration: underline;
+}
+
+.prod_detail{
+line-height: 5vh;
+width: 50vw;
+}
+
+.prod_detail p{
+    font-size: medium;
+}
+
+.rating{
+    background-color: rgb(7, 66, 7);
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background-color: #0056b3;
+}
+
+.quantity-display {
+  margin: 0 10px;
+}
+
+.no-items {
+  margin-top: 20px;
+  text-align: center;
+  color: #999;
+}
+
+.remove-button{
+    margin-top: 5px;
+    background-color:transparent;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    left: 14.7vw;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:760px) {
+  .container{
+    padding: 0;
+  }
+  
+
+  .prod_content{
+        line-height: 2vh;
+        margin: 0;
+        height: 14vh;
+        width:90vw;
+    }
+    .prod_content img {
+        width: 35vw;
+        height: 13vh;
+        margin-right: 30px;
+        position: relative;
+        left:-2vw;
+        top: 1vh;
+        transition: all 0.5s;
+      }
+
+
+      .prod_detail{
+        position: relative;
+        left: 35vw;
+        bottom: 13vh;
+        width:50vw;
+        line-height: 2vh;
+        }
+
+.prod_detail p{
+  font-size: 10px;
+}
+
+        .product__title{
+          line-height: 2vh;
+          font-size: 8px;
+        }
+
+        .rating{
+             font-size: 10px;
+        }
+
+        .add__minus{
+          font-size: 9px;
+        }
+
+        .remove-button{
+          position: relative;
+          left:-23.5vw;
+          top:-12vh;
+        }
+}

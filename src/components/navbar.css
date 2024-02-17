@@ -1,0 +1,131 @@
+.navbar{
+   background-color:#2874f0;
+   box-shadow:  0 4px 6px rgba(0, 0, 0, 0.1);
+   padding: 6px;
+   position: fixed;
+   width: 100vw;
+   z-index: 2;
+   top: 0px;
+   justify-items: center;
+}
+
+.navbar h1{
+    position: absolute;
+    left:5vw;
+    top:1vh;
+}
+
+.nav__menu{
+    position: fixed;
+    inset-block: 0;
+    left:-100%;
+    background-color:#2874f0;
+    width: 100vw;
+    padding: 60px 30px;
+     transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1); 
+     z-index: 10;
+     padding-top: 0px;
+}
+
+.back_btn{
+    width:20px;
+    background-color: transparent;
+    border: none;
+    margin-top: 7px;
+    font-size: 15px;
+}
+.show-menu{
+    left: 0;
+} 
+
+.btn{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .cart{
+    font-size: 20px;
+    border-bottom:1px solid gray;
+ }
+
+.nav__name{
+    font-weight: 500;
+}
+
+ .nav__toggle{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 12px 10px; 
+    z-index: 101;
+}
+
+ .nav__toggle span{
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: gray;
+    margin-bottom: 4px;
+    position: relative;
+    top:-30px;
+ }
+
+
+
+ .animated-toggle span:first-child {
+   transform:rotate(45deg) translate(6px, 4px);
+ }
+
+ .animated-toggle span:nth-child(2) {
+   display: none;
+  }
+    
+  .animated-toggle span:last-child {
+    transform:rotate(-45deg) translate(1px ,1px);
+  }
+
+  
+   @media screen and (min-width:1024px) {
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        background-color:#2874f0;
+       box-shadow:  0 4px 6px rgba(0, 0, 0, 0.1);
+       padding: 6px;
+       position: fixed;
+       width: 100vw;
+       z-index: 2;
+       top: 0px;
+       overflow-x: hidden;
+    }
+
+    
+     .nav__menu{
+        all:unset;
+     }
+     .nav__toggle{
+        display: none;
+     }
+     
+     .navbar h1{
+        margin-left: 30px;
+        font-size: 30px;
+     }
+
+.btn{
+    display: flex;
+    flex-direction: row;
+   position: relative;
+   top:-0.5vh;
+   left:80vw;
+}
+     
+.back_btn{
+    display: none;
+}
+   }  
