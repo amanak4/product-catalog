@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { FaArrowLeft} from "react-icons/fa";
+import { FaArrowLeft, FaCartPlus, FaHeart, FaHome} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import toast from "react-hot-toast";
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -9,13 +10,22 @@ function Navbar() {
     window.history.back();
   };
 
+  const path = window.location.pathname;
+  if(path==='/success'){
+    // toast.success('Payment successfull');
+    alert('Payment successfull');
+    window.location.href='/';
+  }else if(path==='/cancel'){
+    // toast.error('Payment cancelled');
+    alert('Payment cancelled');
+    window.location.href='/';
+  }
   return (
     <nav className="navbar">
       <button className="back_btn" onClick={() => back_fxn()}>
         <FaArrowLeft />
       </button>
-      <h1>Product Catalog</h1>
-
+         <Link  className="heading" to='/'> <span className="nav_heading">Product</span></Link>
       <div className={`${showMenu ? "nav__menu show-menu" : "nav__menu"}`}>
         <div className="btn">
           <Link to="/" className="cart" onClick={() => setShowMenu(!showMenu)}>

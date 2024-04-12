@@ -7,10 +7,13 @@ import Cart from "./views/cart/cart";
 import Wishlist from "./views/cart/wishlist";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import ScrollToTop from "./components/Scrolltotop";
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <div>
     <Navbar />
+    <ScrollToTop />
      <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/category/1/:id" element={<Category />} />
@@ -19,6 +22,7 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
         <Footer />
+        <Toaster />
     </div>
   );
 }

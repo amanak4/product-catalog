@@ -1,12 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
-import { categories } from '../../components/data';
+import { categories } from '../../data';
+
 
 const YourComponent = () => {
+
+   const scrollToCategory = () => {
+        const categoryContainer = document.getElementById('category-container');
+        categoryContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+
     return (
-        <div className='container'>
-        <h2 className='categ'>Categories</h2>
+        <div className='home-container'>
+        <div className='welcome_sec'>
+          <div className='first_sec'>
+    <h5>WELCOME TO</h5>
+    <h1>Our Store</h1>
+    <span>Lorem ah zcncna H CZ HDNNAZ Bnxanjjdhac sz acsa nz</span>
+<button onClick={()=>scrollToCategory()}>SHOP NOW</button>
+          </div>
+          <div className='second_sec'>
+          </div>
+        </div>
+        <div className='category_section' id='category-container'>
+        <h6>CHECK NOW</h6>
+        <h1>Our Feature Products</h1>
         <div className='grid'>
             {categories.map((cate, index) => (
                 <ul key={index} className='category-item'> 
@@ -16,6 +36,7 @@ const YourComponent = () => {
                     </Link>
                 </ul>
             ))}
+        </div>
         </div>
         </div>
     );

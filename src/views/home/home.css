@@ -2,13 +2,72 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* background-color: gray; */
   }
-
-
-.container{
+body{
+    overflow-x:hidden;
+    
+}
+.home-container{
    position: relative;
-   top:40px;
+   top:60px;
+   width: 100vw;
+}
+
+.welcome_sec{
+    width: 100vw;
+    height: 65vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.second_sec{
+    background: url('../../assets/family-2923690_1280.jpg');
+    filter:brightness(0.3) contrast(1.2);
+    background-size: cover;
+    width: 100vw;
+    height: 65vh;
+    position: absolute;
+    top: 5vh;
+    z-index: -1;
+}
+.first_sec{
+   position: absolute;
+   top: 18vh;
+   left:5vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+}
+
+.first_sec h5,.first_sec span
+{ color: rgb(255, 255, 255);
+    font-size: 1em;
+}
+.first_sec h1{
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+}
+
+.first_sec button{
+    cursor: pointer;
+    border:none;
+    height: 50px;
+    width:120px;
+    background-color: orange;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.category_section{
+    /* background-color:wheat; */
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    /* margin-left: 20px; */
+    background-color: #ddd;
 }
 
 .btn{
@@ -42,17 +101,22 @@ transition: text-decoration 1s ease;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    margin-top: 20px;
+    /* display: grid;
+    grid-template-columns: repeat(4,280px);
+    gap: 40px; */
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .category-item {
+    margin:15px;
     list-style: none;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.3s;
+    background-color: white;
 }
 
 .category-item:hover {
@@ -64,6 +128,10 @@ transition: text-decoration 1s ease;
     display: block;
     color: inherit;
     text-decoration: none;
+  
+    color: white;
+    width:fit-content;
+    border-radius: 10px;
 }
 
 .category-link:hover{
@@ -77,10 +145,14 @@ transition: text-decoration 1s ease;
 }
 
 .category-name {
+    padding: 7px;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
-    font-weight: 500;
+    background-color: black;
+    height: 40px;
+    font-weight: 700;
+    border-radius: 10px;
 }
 
 /*-----------wishlist------------*/
@@ -89,16 +161,48 @@ transition: text-decoration 1s ease;
     color: red;
 }
 
-.unfilledheart{
-color: white;
-}
-
 
 @media screen and (max-width:760px) {
 
 .navbar h1{
-    font-size: 19px;
+    font-size: 1.2em;
     margin-left: 20px;
+}
+
+
+
+.welcome_sec{
+    height: 42vh;
+}
+
+.second_sec{
+    height: 40vh;
+    background-size: cover;
+}
+.first_sec{
+   top: 11vh;
+}
+
+
+.first_sec h5,.first_sec span
+{ 
+    font-size: 0.7em;
+}
+.first_sec h1{
+    font-size: 2.5em;
+}
+
+.first_sec button{
+    height: 30px;
+    width:90px;
+    font-size: 0.8em;
+}
+
+
+.grid {
+    grid-template-columns: repeat(1,80vw);
+   justify-content: center;
+   align-items: center;
 }
 
     .category-link ,.product-link{
@@ -108,11 +212,11 @@ color: white;
       align-items: center;
     }
 
-    .category-image , .product-image {
-    width: 70vw;
-    height: 35vh;
-    border-radius: 8px;
-}
-
-
+    .category-image {
+        width: 70vw;
+    }
+    
+    .category-name {
+        width:70vw;
+    }
 }

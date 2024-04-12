@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { products } from '../../components/data';
+import { products } from '../../data';
 import './category.css';
 import { FaRupeeSign, FaStar } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 function Category() {
     const [orderedproducts,setorderproducts]=useState([]);
     const [unfilter,setfilter]=useState(false);
     const [filterprice,setfilterprice]=useState(false);
     const [pgno,setpgno]=useState(1);
-    const prodperpg=4;
+    const prodperpg=6;
     let no_of_pages=0;
     const firstindex=pgno*prodperpg-prodperpg;
     const lastindex=pgno*prodperpg;
@@ -16,11 +17,11 @@ function Category() {
 
 /*-------------Pagination------------------*/
 const no_of_prod=products.filter(prod=>prod.category===id).length;
-if(no_of_prod%4!=0){
-     no_of_pages=Math.floor(no_of_prod/4)+1;
+if(no_of_prod%prodperpg!=0){
+     no_of_pages=Math.floor(no_of_prod/prodperpg)+1;
 }
 else{
-    no_of_pages=no_of_prod/4;
+    no_of_pages=no_of_prod/prodperpg;
 }
 
 const productarr=products.filter(prod=>prod.category===id).slice(firstindex,lastindex);
@@ -35,6 +36,7 @@ const productarr=products.filter(prod=>prod.category===id).slice(firstindex,last
             return b.rating.rate - a.rating.rate;
         });
         setorderproducts(filteredProducts);
+        toast.success('Filtered Successfully w.r.t. Rating');
     }
 
     const unfilterfxn=()=>{
@@ -45,7 +47,9 @@ const productarr=products.filter(prod=>prod.category===id).slice(firstindex,last
                 return b.price - a.price;
             });
             setorderproducts(filteredProducts);
+            toast.error('Removed filter w.r.t. rating');
         }
+
     }
 
 const pricefilter=()=>{
@@ -55,6 +59,7 @@ const filteredProducts = [...productarr];
             return b.price - a.price;
         });
         setorderproducts(filteredProducts);
+        toast.success('Filtered Successfully w.r.t. Price');
 }
 
 const unfilterfxnofprice=()=>{
@@ -65,13 +70,14 @@ const unfilterfxnofprice=()=>{
         return b.rating.rate - a.rating.rate;
     });
     setorderproducts(filteredProducts);
+    toast.error('Removed filter w.r.t. price');
 }
 }
 
    /*----------------------------------------- RETURN ----------------------------------- */
 
     return (
-        <div className='container'>
+        <div className='category_container'>
             <h2>{id}</h2>
             <div className='filters'>
             <h3>Filter By :</h3>
@@ -91,7 +97,7 @@ const unfilterfxnofprice=()=>{
                                     <img src={prod.image} alt={prod.title} className='product-image' />
                                     <div className='product-details'>
                                         <h3 className='product-title'>{prod.title}</h3>
-                                        <p className='product-price'><span>Price :</span><FaRupeeSign /> {prod.price}</p>
+                                        <p className='product-price'><span>Price :</span>₹{prod.price}</p>
                                         <p><span className='rating'>{prod.rating.rate} <FaStar className='star' /></span> {prod.rating.count} Rating</p>
                                      </div>
                                 </Link>

@@ -1,21 +1,23 @@
-.container {
-    padding: 20px;
+.box {
+    margin-top: 80px;
+    
 }
 
-.prod-details {
-    display: flex;
-   flex-direction: column;
+.prod-details{
+   height: auto;
+   padding: 30px;
 }
 
 .prod {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .prod-image{
-    width: 35vw;
-    height: 65vh;
+    width: 25vw;
+    height: 50vh;
     border-radius: 8px;
     transition: all 0.3s;
     position:static;
@@ -30,21 +32,25 @@
 
 
 .prod-info {
+    padding: 20px;
+    color: black;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: start; 
    width: 55vw;
+  min-height:70vh;
 }
 
 .prod-title {
     margin: 10px 0;
     font-size: 24px;
+
 }
 
 .prod-description {
     margin-bottom: 10px;
-
+   text-align: start;
 }
 
 
@@ -52,6 +58,7 @@
     font-weight: bold;
     margin-bottom: 10px;
     margin-top: 10px;
+    color:orangered;
   }
   
   .specs-list {
@@ -62,40 +69,44 @@
      flex-direction: column;
   }
   
-  .specs-list {
-    list-style: none;
-    padding: 0;
-  }
-  
   .specs-list li {
     margin-bottom: 5px;
+    display: flex;
   }
   
   .speci-key {
+    display: inline-block;
     color: grey;
     font-weight: bold;
-    margin-right: 10px;
-    height: 40px;
+    height: 20px;
+    width: 120px;
+    
+     text-align: start;
   }
   
   .speci-value {
+    display: inline-block;
+    text-align: start;
     color: black;
     width: 40vw;
 word-wrap: break-word;
   }
 
 .prod-rating {
-    font-size: 16px;
+    font-size: 13px;
+    background-color: rgb(2, 82, 2);
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.star{
+    font-size: 10px;
 }
 
 p span{
     font-weight: 500;
-}
-
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    position: absolute;
 }
 
 .add-to-cart,
@@ -111,6 +122,7 @@ p span{
     width:15vw;
     height: 7vh;
     font-size: 1.2em;
+    text-decoration: none;
 }
 
 .add-to-cart:hover,
@@ -118,13 +130,31 @@ p span{
     background-color: #0056b3;
 }
 
+.go-to-cart{
+    width: 20vw;
+}
+
+.filledheart{
+    margin: 0 10px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width:15vw;
+    height: 7vh;
+    font-size: 1.2em;
+    text-decoration: none;
+    background-color: red;
+}
+
 @media screen and (max-width: 760px) {
-    .container {
-        padding: 10px;
-    }
+   
 
     .prod-details {
         display: block;
+        padding: 20px;
     }
 
     .prod {
@@ -133,7 +163,7 @@ p span{
     }
 
     .prod-image {
-        width: 100%;
+        width: 80vw;
         height: auto;
         margin-right: 0;
         border-radius: 8px;
@@ -142,9 +172,11 @@ p span{
     }
 
     .prod-info {
-        width: 100%;
-        text-align: center;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: start; 
+       width: 90vw;
+      height: auto;
     }
 
     .prod-title {
@@ -164,10 +196,12 @@ p span{
         display: flex;
         align-items: start;
         flex-direction: column;
+        margin-bottom: 30px;
     }
 
     .specs-list li {
         margin-bottom: 3px;
+        display: flex;
     }
 
     .speci-key {
@@ -178,8 +212,9 @@ p span{
     }
 
     .speci-value {
+        text-align: start;
         color: black;
-        width: 100%;
+        width: 50vw;
         word-wrap: break-word;
     }
 
@@ -207,15 +242,25 @@ top: 82vh;
         width: 38vw;
         margin: 5px;
         padding: 8px;
-        font-size: 1em;
+        font-size: 1.2em;
         position: relative;
-left:-10vw;
-        /* top:90vh;
-        left:55vw; */
+left:-8vw;
     }
 
     .add-to-cart{
-        left:-10vw;
+        left:-9vw;
+    }
+   
+    .go-to-cart{
+       padding: 10px;
+    }
+    .filledheart{
+        width: 38vw;
+        margin: 5px;
+        padding: 8px;
+        font-size: 1.2em;
+        position: relative;
+left:-8vw;
     }
 }
 
