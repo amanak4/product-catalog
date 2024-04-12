@@ -93,7 +93,7 @@ const makePayment = async () => {
     const stripe = await loadStripe(Publishable_Key);
   
    try{ // console.log(storedCart);
-    const response = await axios.post("http://localhost:7000/api/create-checkout-session", storedCart);
+    const response = await axios.post("https://product-catalog-jywz.onrender.com/api/create-checkout-session", storedCart);
     const sessionId = response.data.id;
     // Redirect to the Stripe Checkout page
     console.log(sessionId);
