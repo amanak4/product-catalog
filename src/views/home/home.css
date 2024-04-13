@@ -119,7 +119,15 @@ transition: text-decoration 1s ease;
     background-color: white;
 }
 
-.category-item:hover {
+.category-image {
+    width: 20vw;
+    height: 40vh;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+
+.category-image:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
 }
@@ -138,11 +146,6 @@ transition: text-decoration 1s ease;
     color: rgb(0, 166, 255);
 }
 
-.category-image {
-    width: 20vw;
-    height: 40vh;
-    border-radius: 8px;
-}
 
 .category-name {
     padding: 7px;
