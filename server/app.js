@@ -30,8 +30,8 @@ app.post("/api/create-checkout-session", async (req, res) =>{
         payment_method_types:["card"],
         line_items:lineItems,
         mode:"payment",
-        success_url:"https://product-catalog-1.onrender.com/success",
-        cancel_url:"https://product-catalog-1.onrender.com/cancel"
+        success_url:"https://product-catalog-ashen.vercel.app/success",
+        cancel_url:"https://product-catalog-ashen.vercel.app/cancel"
     });
     res.json({id:session.id});
 });
